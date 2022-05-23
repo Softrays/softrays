@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title><%= title %></title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/admin/assets/img/favicon.png" rel="icon" />
+    <link
+      href="/admin/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/simple-datatables/style.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="/admin/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+          <!-- <img src="../assets/img/logo.png" alt="" /> -->
+          <span>SOFTRAYS</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="/passport/<%= profile.image %>"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                ><%= profile.fullName %></span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="
+                dropdown-menu dropdown-menu-end dropdown-menu-arrow
+                profile
+              "
+            >
+              <li class="dropdown-header">
+                <h6><%= profile.fullName %></h6>
+                <span><%= profile.email %></span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/admin/profile"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/admin/logout"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/registered-student">
+            <i class="bi bi-people-fill"></i>
+            <span>Registered Students</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/upload-certificate">
+            <i class="bi bi-upload"></i>
+            <span>Upload Certificate</span>
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/logout">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Registered Students</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Registered Students</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <% if(students.length == 0) { %>
+      <h1>No Students Registered Yet</h1>
+      <div style="height: 67vh"></div>
+      <% } else { %>
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Registered Students</h5>
+                <%- include("../partials/messages") %>
+
+                <!-- Table with stripped rows -->
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered text-center"
+                    style="padding: 10px 0; font-size: 90%"
+                  >
+                    <thead>
+                      <tr style="text-transform: capitalize">
+                        <th>Student name</th>
+                        <th>course</th>
+                        <th>email</th>
+                        <th>phone number</th>
+                        <th>date registered</th>
+                        <th>payment status</th>
+                        <th>reference</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <% students.map(student => { %>
+                    <form action="/admin/delete" method="post">
+                      <tbody>
+                        <tr style="text-transform: capitalize">
+                          <td><%= student.fullName%></td>
+                          <td><%= student.course%></td>
+                          <td style="text-transform: lowercase">
+                            <%= student.email%>
+                          </td>
+                          <td><%= student.phoneNumber %></td>
+                          <td><%= moment(student.date).format(date)%></td>
+                          <% if(student.reference.gateway_response == undefined)
+                          { %>
+                          <td>
+                            Not Paid &nbsp;
+                            <i class="bi bi-check-circle text-danger"></i>
+                          </td>
+                          <td style="text-transform: uppercase">Nil</td>
+                          <% } else { %>
+                          <td>
+                            <%= student.reference.gateway_response %> &nbsp;
+                            <i class="bi bi-check-circle-fill text-success"></i>
+                          </td>
+                          <td style="text-transform: uppercase">
+                            <%= student.reference.reference %>
+                          </td>
+                          <% } %>
+
+                          <td>
+                            <button
+                              onclick="if(confirm('Are you sure you want to delete the record of this student from the database? \nThis action cannot be undone?')){}else{return false;};"
+                              title="Delete Student"
+                              style="
+                                border: none;
+                                cursor: pointer;
+                                background-color: transparent;
+                              "
+                              type="submit"
+                              name="itemId"
+                              value="<%= student._id %>"
+                            >
+                              <i class="bi bi-trash-fill text-danger"> </i>
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </form>
+                    <% })%>
+                  </table>
+                </div>
+                <!-- End Table with stripped rows -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <% }%>
+      <div>
+        <% if (pages > 0) { %>
+        <ul class="pagination text-center justify-content-end pagination-md">
+          <% if (current == 1) { %>
+          <li class="disabled page-item">
+            <a class="page-link">First Page</a>
+          </li>
+          <% } else { %>
+          <li class="page-item">
+            <a href="/admin/registered-student/1" class="page-link"
+              >First Page</a
+            >
+          </li>
+          <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+          <% if (i !== 1) { %>
+          <li class="disabled page-item">
+            <a class="page-link">...</a>
+          </li>
+          <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+          <% if (i == current) { %>
+          <li class="active page-item">
+            <a class="page-link"><%= i %></a>
+          </li>
+          <% } else { %>
+          <li class="page-item">
+            <a href="/admin/registered-student/<%= i %>" class="page-link"
+              ><%= i %></a
+            >
+          </li>
+          <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
+          <li class="disabled page-item">
+            <a class="page-link">...</a>
+          </li>
+          <% } %> <% } %> <% if (current == pages) { %>
+          <li class="disabled page-item">
+            <a class="page-link">Last Page</a>
+          </li>
+          <% } else { %>
+          <li class="page-item">
+            <a href="/admin/registered-student/<%= pages %>" class="page-link"
+              >Last Page</a
+            >
+          </li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+
+        Copyright <strong><span>Softrays Consultant</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://alexanderjoshua.com.ng/">Alexander Joshua</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/admin/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/admin/assets/vendor/quill/quill.min.js"></script>
+    <script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/admin/assets/vendor/chart.js/chart.min.js"></script>
+    <script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/admin/assets/js/main.js"></script>
+  </body>
+</html>

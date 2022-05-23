@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title><%= title %></title>
+    <meta
+      name="keywords"
+      content="computer training, web design, web development, autocad training, revit, solid works, ui ux,  otion graphics, graphics design, microsoft word training, microsoft excel, mini importation, digital marketing, digital marketing agency in ilorin, web design training in ilorin, software development, networking, CCNA, CCNP"
+    />
+    <meta
+      name="description"
+      content="Softrays Training Instistute is a Regional training center for Web development, Graphics design, AutoCAD (2D and 3D), CCNA & CCNP, Systems Engineering and Information Technology and Computing."
+    />
+
+    <!-- Favicons -->
+    <link href="/admin/assets/img/favicon.png" rel="icon" />
+    <link
+      href="/admin/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/simple-datatables/style.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="/admin/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+          <!-- <img src="../assets/img/logo.png" alt="" /> -->
+          <span>SOFTRAYS</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="/passport/<%= profile.image %>"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                ><%= profile.fullName %></span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="
+                dropdown-menu dropdown-menu-end dropdown-menu-arrow
+                profile
+              "
+            >
+              <li class="dropdown-header">
+                <h6><%= profile.fullName %></h6>
+                <span><%= profile.email %></span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/users/profile"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/users/logout"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/print-application-form">
+            <i class="bi bi-printer"></i>
+            <span>Print Application Form</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/logout">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <section class="section dashboard">
+        <div class="row">
+          <!-- Left side columns -->
+          <div class="col-lg-12">
+            <div class="row">
+              <!-- Sales Card -->
+              <div class="col-xxl-6 col-lg-4 col-md-12">
+                <div class="card info-card sales-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Course Registered</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="
+                          card-icon
+                          rounded-circle
+                          d-flex
+                          align-items-center
+                          justify-content-center
+                        "
+                      >
+                        <i class="bi bi-stack"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><%= profile.course %></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <small
+                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
+                  >
+                    <i class="bi bi-clock"></i> &nbsp; Registered on <%=
+                    moment(profile.date).format(date) %></small
+                  >
+                </div>
+              </div>
+              <!-- End Sales Card -->
+
+              <!-- Customers Card -->
+              <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card info-card customers-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Duration of Course</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="
+                          card-icon
+                          rounded-circle
+                          d-flex
+                          align-items-center
+                          justify-content-center
+                        "
+                      >
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6><%= profile.duration %></h6>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <small
+                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
+                  >
+                    <i class="bi bi-clock"></i> &nbsp; Just Updated</small
+                  >
+                </div>
+              </div>
+              <!-- End Customers Card -->
+
+              <!-- Customers Card -->
+              <div class="col-xxl-3 col-lg-4 col-md-6">
+                <div class="card info-card customers-card">
+                  <div class="card-body">
+                    <h5 class="card-title">Payment Status</h5>
+
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="
+                          card-icon
+                          rounded-circle
+                          d-flex
+                          align-items-center
+                          justify-content-center
+                        "
+                      >
+                        <i class="bi bi-currency-dollar"></i>
+                      </div>
+                      <% if(profile.reference.gateway_response == undefined) {
+                      %>
+                      <div class="ps-3">
+                        <h6>
+                          Not Paid &nbsp;
+                          <a
+                            href="/users/print-application-form"
+                            class="text-sm btn btn-danger"
+                          >
+                            <i class="bi bi-credit-card-2-back"></i> Pay Now</a
+                          >
+                        </h6>
+                      </div>
+                      <% } else { %>
+                      <div class="ps-3">
+                        <h6><%= profile.reference.gateway_response %></h6>
+                      </div>
+                      <% }%>
+                    </div>
+                  </div>
+                  <hr />
+
+                  <% if(profile.reference.gateway_response == undefined) { %>
+                  <small
+                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
+                  >
+                    <i class="bi bi-clock"></i> &nbsp; Not Paid</small
+                  >
+                  <% }else { %>
+                  <small
+                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
+                  >
+                    <i class="bi bi-clock"></i> &nbsp; Paid on: <%=
+                    moment(profile.reference.paid_at).format(date) %></small
+                  >
+                  <% } %>
+                </div>
+              </div>
+              <!-- End Customers Card -->
+            </div>
+          </div>
+          <!-- End Left side columns -->
+        </div>
+      </section>
+
+      <!-- <%= siwes = "Student Industrial Work Experience Scheme (SIWES)"%> -->
+      <!-- <%= paid = "success" %> -->
+      <!-- <%= res = undefined %> -->
+      <% if(profile.course == siwes && profile.reference.status == paid ) { %>
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Join the Siwes Group Chat for more information
+                </h5>
+                <a
+                  href="https://chat.whatsapp.com/Kqv5d3RHZtmH5JKFaYeN87"
+                  class="btn btn-success btn-lg mr-5"
+                >
+                  <i class="bi bi-whatsapp"> </i> &nbsp; Whatsapp
+                </a>
+                <!-- &nbsp;&nbsp;&nbsp;
+                <a
+                  href="https://chat.whatsapp.com/DYoCNF2C1PbEfgcDsi4UY0"
+                  class="btn btn-info btn-lg"
+                >
+                  <i class="bi bi-telegram text-white"> </i> &nbsp; Telegram
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <% } %> <% if( profile.reference.gateway_response == res && profile.course
+      == siwes ) { %>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Please pay to join the Whatsapp Group</p>
+        </div>
+      </div>
+      <% } %>
+
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Students Also Studying <%= profile.course %>
+                </h5>
+
+                <!-- Table with stripped rows -->
+                <div class="table-responsive">
+                  <table class="table table-bordered text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col">Avatar</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Date Registered</th>
+                      </tr>
+                    </thead>
+                    <% students.forEach(otherStudent => { %> <%
+                    if(otherStudent.email == profile.email) { %> <%
+                    profile.email= ''; %> <% } %>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <img
+                            src="/passport/<%= otherStudent.image %>"
+                            class="img-responsive"
+                            alt=""
+                            style="
+                              height: 40px;
+                              width: 40px;
+                              border-radius: 50%;
+                            "
+                          />
+                        </td>
+                        <td style="text-transform: capitalize">
+                          <%= otherStudent.fullName %>
+                        </td>
+
+                        <td><%= otherStudent.email %></td>
+                        <td><%= otherStudent.gender %></td>
+                        <td><%= otherStudent.phoneNumber %></td>
+                        <td style="text-transform: capitalize">
+                          <%= otherStudent.address %>
+                        </td>
+                        <td><%= moment(otherStudent.date).format('LLLL') %></td>
+                      </tr>
+                    </tbody>
+                    <% })%>
+                  </table>
+                </div>
+                <div>
+                  <% if (pages > 0) { %>
+                  <ul
+                    class="
+                      pagination
+                      text-center
+                      justify-content-end
+                      pagination-md
+                    "
+                  >
+                    <% if (current == 1) { %>
+                    <li class="disabled page-item">
+                      <a class="page-link">First Page</a>
+                    </li>
+                    <% } else { %>
+                    <li class="page-item">
+                      <a href="/users/dashboard/1" class="page-link"
+                        >First Page</a
+                      >
+                    </li>
+                    <% } %> <% var i = (Number(current) > 5 ? Number(current) -
+                    4 : 1) %> <% if (i !== 1) { %>
+                    <li class="disabled page-item">
+                      <a class="page-link">...</a>
+                    </li>
+                    <% } %> <% for (; i <= (Number(current) + 4) && i <= pages;
+                    i++) { %> <% if (i == current) { %>
+                    <li class="active page-item">
+                      <a class="page-link"><%= i %></a>
+                    </li>
+                    <% } else { %>
+                    <li class="page-item">
+                      <a href="/users/dashboard/<%= i %>" class="page-link"
+                        ><%= i %></a
+                      >
+                    </li>
+                    <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
+                    <li class="disabled page-item">
+                      <a class="page-link">...</a>
+                    </li>
+                    <% } %> <% } %> <% if (current == pages) { %>
+                    <li class="disabled page-item">
+                      <a class="page-link">Last Page</a>
+                    </li>
+                    <% } else { %>
+                    <li class="page-item">
+                      <a href="/users/dashboard/<%= pages %>" class="page-link"
+                        >Last Page</a
+                      >
+                    </li>
+                    <% } %>
+                  </ul>
+                  <% } %>
+                </div>
+                <!-- End Table with stripped rows -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+
+        Copyright <strong><span>Softrays Consultant</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://alexanderjoshua.com.ng/">Alexander Joshua</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/admin/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/admin/assets/vendor/quill/quill.min.js"></script>
+    <script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/admin/assets/vendor/chart.js/chart.min.js"></script>
+    <script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/admin/assets/js/main.js"></script>
+  </body>
+</html>

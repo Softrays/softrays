@@ -1,0 +1,44 @@
+{
+  "name": "softratysit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "prod": "git push heroku main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeLawd/softratysit.git"
+  },
+  "keywords": [],
+  "author": "Alexander Joshua",
+  "license": "ISC",
+  "engines": {
+    "node": "14.16.1"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeLawd/softratysit/issues"
+  },
+  "homepage": "https://github.com/CodeLawd/softratysit#readme",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.25",
+    "async": "^3.2.0",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.12",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.17",
+    "numeral": "^2.0.6",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "request": "^2.88.2"
+  }
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title><%= title %></title>
+    <meta
+      name="keywords"
+      content="computer training, web design, web development, autocad training, revit, solid works, ui ux,  otion graphics, graphics design, microsoft word training, microsoft excel, mini importation, digital marketing, digital marketing agency in ilorin, web design training in ilorin, software development, networking, CCNA, CCNP"
+    />
+    <meta
+      name="description"
+      content="Softrays Training Instistute is a Regional training center for Web development, Graphics design, AutoCAD (2D and 3D), CCNA & CCNP, Systems Engineering and Information Technology and Computing."
+    />
+
+    <!-- Favicons -->
+    <link href="/admin/assets/img/favicon.png" rel="icon" />
+    <link
+      href="/admin/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/simple-datatables/style.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="/admin/assets/css/style.css" rel="stylesheet" />
+
+    <style>
+      thead > tr {
+        background-color: #4c6fac;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+          <!-- <img src="../assets/img/logo.png" alt="" /> -->
+          <span>SOFTRAYS</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="/passport/<%= profile.image %>"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                ><%= profile.fullName %></span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="
+                dropdown-menu dropdown-menu-end dropdown-menu-arrow
+                profile
+              "
+            >
+              <li class="dropdown-header">
+                <h6><%= profile.fullName %></h6>
+                <span><%= profile.email %></span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/users/profile"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/users/logout"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/print-application-form">
+            <i class="bi bi-printer"></i>
+            <span>Print Application Form</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/users/logout">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div>
+        <%- include("../partials/messages") %>
+        <br />
+
+        <% if(profile.reference.status != "success" &&
+        profile.reference.gateway_response != "Successful ") { %>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Kindly proceed to make payment first</h5>
+
+                <form id="" action="/users/paystack/pay" method="POST">
+                  <div class="form-group">
+                    <!-- <label for="email">Email Address</label> -->
+                    <input
+                      type="email"
+                      id="email-address"
+                      class="form-control"
+                      value="<%= profile.email %>"
+                      style="display: none"
+                      name="email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr class="bg-primary text-white">
+                          <th>Details</th>
+                          <th>Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- <%= siwes = "Student Industrial Work Experience Scheme (SIWES)"%> -->
+                        <tr>
+                          <td>Course Registration Fee:</td>
+                          <td>N<%= numeral(profile.price).format('0,0') %></td>
+                        </tr>
+                        <tr>
+                          <td>Application Form:</td>
+                          <% if(profile.course == siwes) { %>
+
+                          <td>N<%= numeral(form = 0).format('0,0') %></td>
+                          <% } else { %>
+
+                          <td>N<%= numeral(form = 1000).format('0,0') %></td>
+                          <% } %>
+                        </tr>
+                        <!-- <tr>
+                          <td>Transaction Fee:</td>
+                          <td>
+                            N<%= numeral(profile.price * 0.016).format('0,0')%>
+                          </td>
+                        </tr> -->
+                        <tr>
+                          <th>Total</th>
+                          <th>
+                            N<%= newPrice = numeral(profile.price +
+                            form).format('0,0.00') %>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <input
+                      type="tel"
+                      id="amount"
+                      value="<%= profile.price + form %>"
+                      style="display: none"
+                      name="amount"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <!-- <label for="first-name">First Name</label> -->
+                    <input
+                      type="text"
+                      id="first-name"
+                      value="<%= profile.fullName %>"
+                      style="display: none"
+                      name="fullName"
+                    />
+                  </div>
+                  <div class="form-submit">
+                    <button
+                      type="submit"
+                      onclick="payWithPaystack()"
+                      class="btn btn-primary w-100"
+                    >
+                      Pay Now
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="height: 35vh"></div>
+        <% }else{ %> <%- include('./form') %> <% } %>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- <div style="height: 30vh"></div> -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+
+        Copyright <strong><span>Softrays Consultant</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://alexanderjoshua.com.ng/">Alexander Joshua</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/admin/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/admin/assets/vendor/quill/quill.min.js"></script>
+    <script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/admin/assets/vendor/chart.js/chart.min.js"></script>
+    <script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/admin/assets/js/main.js"></script>
+    <script src="/assets/js/jQuery.print.min.js"></script>
+
+    <script>
+      function printForm() {
+        "<%= profile.image %>"
+          ? $.print("#print")
+          : alert("Plese upload a passport before printing");
+
+        // $("#print_btn").addClass("display_none");
+      }
+
+      $(document).on("keydown", function (e) {
+        if (
+          (e.ctrlKey || e.metaKey) &&
+          (e.key == "p" ||
+            e.charCode == 16 ||
+            e.charCode == 112 ||
+            e.keyCode == 80)
+        ) {
+          alert(
+            "Please use the Print button below for a better rendering of the document"
+          );
+          e.cancelBubble = true;
+          e.preventDefault();
+
+          e.stopImmediatePropagation();
+        }
+      });
+    </script>
+  </body>
+</html>

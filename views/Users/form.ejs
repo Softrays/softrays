@@ -1,0 +1,141 @@
+<body>
+  <div class="row">
+    <div class="col-lg-8" style="margin: 0 auto" id="print">
+      <div class="card">
+        <div class="card-body" style="margin: 0 25px">
+          <h4
+            class="card-title text-center text-uppercase"
+            style="color: #4c6fac"
+          >
+            <span style="font-size: 140%; font-weight: 800; color: #4c6fac">
+              Softrays Information Technology
+            </span>
+            <br />
+            <strong> Application Form </strong>
+          </h4>
+          <table class="table table-hover" style="position: relative">
+            <!-- <img
+              src="/passport/<%= profile.image %>"
+              alt=""
+              style="position: absolute; z-index: 2; right: 45px; top: 190px"
+            /> -->
+            <div class="d-flex justify-content-center">
+              <img
+                src="/passport/<%= profile.image %>"
+                alt=""
+                style="border: 2px solid #37517e; width: 100px; height: auto"
+              />
+            </div>
+            <br />
+            <thead>
+              <tr
+                colspan="2"
+                class="text-white w-100"
+                style="background-color: #4c6fac"
+              >
+                <th>STUDENT DETAILS</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full Name</td>
+                <td><%= profile.fullName %></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><%= profile.email %></td>
+              </tr>
+              <tr>
+                <td>Phone Number</td>
+                <td><%= profile.phoneNumber %></td>
+              </tr>
+              <tr>
+                <td>Address</td>
+                <td><%= profile.address %></td>
+              </tr>
+              <tr>
+                <td>Qualification</td>
+                <td><%= profile.qualification %></td>
+              </tr>
+              <tr>
+                <td>Nationality</td>
+                <td><%= profile.nationality %></td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td><%= profile.state %></td>
+              </tr>
+              <!-- <tr>
+                <td>Gender</td>
+                <td><%= profile.gender %></td>
+              </tr> -->
+            </tbody>
+          </table>
+
+          <!-- COURSE INFORMATION -->
+          <br />
+          <table class="table table-hover">
+            <thead>
+              <tr colspan="2" class="text-white">
+                <th>COURSE INFORMATION</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Course</td>
+                <td><%= profile.course %></td>
+              </tr>
+              <tr>
+                <td>Course Duration</td>
+                <td><%= profile.duration %></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- PAYMENT DETAILS -->
+          <br />
+          <table class="table table-hover">
+            <thead>
+              <tr colspan="2" class="text-white w-100">
+                <th>PAYMENT DETAILS</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Transaction Reference</td>
+                <td class="text-uppercase">
+                  <%= profile.reference.reference %>
+                </td>
+              </tr>
+              <tr>
+                <td>Amount Paid</td>
+                <td>
+                  N<%= numeral((profile.reference.amount) /
+                  100).format('0,0.00') %>
+                </td>
+              </tr>
+              <tr>
+                <td>Payment Status</td>
+                <td><%= profile.reference.gateway_response %></td>
+              </tr>
+              <tr>
+                <td>Payment Date</td>
+                <td><%= moment(profile.reference.paid_at).format(date) %></td>
+              </tr>
+            </tbody>
+          </table>
+          <a
+            onclick="printForm()"
+            class="btn btn-md w-100 text-white"
+            style="background-color: #4c6fac"
+          >
+            <i class="bi bi-printer"></i> &nbsp; Print Application Form
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

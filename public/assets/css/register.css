@@ -1,0 +1,125 @@
+
+#wrapper {
+    /* background-image: url("assets/img/animated-shape-2.svg");
+    background-size: cover; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 67px 40px
+}
+
+#register,
+#login,
+#forgot-password {
+    border-radius: 20px;
+    /* box-shadow: 2px 2px 4px #fff; */
+    padding: 0;
+    width: 80%;
+    /* text-align: center */
+    /* height: 90vh */
+}
+
+.welcome {
+    background-color: #184A7F;
+    color: #fff;
+    /* height: 100vh; */
+    padding: 5% 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* overflow-y: scroll; */
+}
+
+.create-account h1 {
+    color: #37517e
+}
+
+.color {
+    background-color: #37517e;
+    border: none;
+    border-radius: 50px !important
+}
+
+.color:hover {
+    color: #fff;
+    background-color: #1b4b9e;
+}
+
+.create-account {
+    background-color: #fff;
+    padding: 4% 4%;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.login-account {
+    background-color: #fff;
+    padding: 4% 4%;
+    height: 550px;
+    /* overflow-y: scroll; */
+}
+
+/* .form-group {
+    padding: 10px 0;
+} */
+
+.icon-group {
+    position: relative
+}
+
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 25px
+}
+
+.icon2 {
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    cursor: pointer;
+}
+
+.form-control {
+    padding: 10px 15px 10px 45px;
+}
+
+.section {
+    padding-left: 20px
+}
+
+.label {
+    text-align: right !important;
+    padding-bottom: 5px;
+}
+
+.price-change {
+    display: inline-block;
+}
+
+.display {
+    display:none !important
+}
+
+.next {
+    margin-bottom: 50px;
+}
+
+.space {
+    height: 50px;
+}
+
+/* 
+#form-2 input {
+    width: 140%;
+} */
+
+.switch {
+    border-radius: 50px;
+}
+
+.forgot-img {
+    width: 100%;
+}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title><%= title %></title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/admin/assets/img/favicon.png" rel="icon" />
+    <link
+      href="/admin/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/simple-datatables/style.css"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="/admin/assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+          <!-- <img src="../assets/img/logo.png" alt="" /> -->
+          <span>SOFTRAYS</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="/passport/<%= profile.image %>"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                ><%= profile.fullName %></span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul
+              class="
+                dropdown-menu dropdown-menu-end dropdown-menu-arrow
+                profile
+              "
+            >
+              <li class="dropdown-header">
+                <h6><%= profile.fullName %></h6>
+                <span><%= profile.email %></span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/admin/profile"
+                >
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a
+                  class="dropdown-item d-flex align-items-center"
+                  href="/admin/logout"
+                >
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/profile">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/registered-student">
+            <i class="bi bi-people-fill"></i>
+            <span>Registered Students</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/upload-certificate">
+            <i class="bi bi-upload"></i>
+            <span>Upload Certificate</span>
+          </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/admin/logout">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Logout</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Profile</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item">Admin</li>
+            <li class="breadcrumb-item active">Profile</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+      <br />
+      <br />
+
+      <section class="section profile">
+        <div class="row">
+          <div class="col-xl-4">
+            <div class="card bg-light">
+              <br />
+              <div
+                class="
+                  card-body
+                  profile-card
+                  pt-4
+                  d-flex
+                  flex-column
+                  align-items-center
+                "
+              >
+                <!-- <img
+                  src="/passport/<%= profile.image %>"
+                  alt="Profile"
+                  class="rounded-circle"
+                /> -->
+
+                <% if(profile.image == undefined) { %>
+                <div class="">
+                  <img
+                    class="img"
+                    style="border-radius: 100%"
+                    src="<%= typeof msg != 'undefined' ? file : '' %>"
+                  />
+                </div>
+                <!-- </div> -->
+                <p style="color: red">
+                  <%= typeof msg != 'undefined' ? msg : '' %>
+                </p>
+                <!-- <br> <br> -->
+
+                <form
+                  action="/admin/upload-passport"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <input type="file" name="passport" class="" />
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="bi bi-upload"></i> Upload Passport
+                  </button>
+                </form>
+                <% } else { %>
+                <div class="card-avatar">
+                  <img
+                    src="/passport/<%= profile.image%>"
+                    class="img-responsive"
+                    alt=""
+                    style="height: 100px; width: auto; border-radius: 100%"
+                  />
+                </div>
+                <p style="color: red">
+                  <%= typeof msg != 'undefined' ? msg : '' %>
+                </p>
+                <form
+                  action="/admin/upload-passport"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <input type="file" name="passport" class="" />
+                  <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="bi bi-upload"></i> Upload Passport
+                  </button>
+                </form>
+                <% } %>
+
+                <br />
+                <h2><%= profile.fullName %></h2>
+                <div style="height: 10px"></div>
+                <h3><%= profile.email %></h3>
+              </div>
+              <br />
+            </div>
+          </div>
+
+          <div class="col-xl-8">
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                  <li class="nav-item">
+                    <button
+                      class="nav-link active"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-overview"
+                    >
+                      Overview
+                    </button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-edit"
+                    >
+                      Edit Profile
+                    </button>
+                  </li>
+
+                  <li class="nav-item">
+                    <button
+                      class="nav-link"
+                      data-bs-toggle="tab"
+                      data-bs-target="#profile-change-password"
+                    >
+                      Change Password
+                    </button>
+                  </li>
+                </ul>
+                <%- include("../partials/messages") %>
+                <div class="tab-content pt-2">
+                  <div
+                    class="tab-pane fade show active profile-overview"
+                    id="profile-overview"
+                  >
+                    <h5 class="card-title">Profile Details</h5>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Full Name</div>
+                      <div class="col-lg-9 col-md-8">
+                        <%= profile.fullName %>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Company</div>
+                      <div class="col-lg-9 col-md-8">Softrays Consultancy</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Role</div>
+                      <div class="col-lg-9 col-md-8">Admin</div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Address</div>
+                      <div class="col-lg-9 col-md-8">
+                        <%= profile.address %>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Phone</div>
+                      <div class="col-lg-9 col-md-8">
+                        <%= profile.phoneNumber %>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8"><%= profile.email %></div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Date Registered</div>
+                      <div class="col-lg-9 col-md-8">
+                        <%= moment(profile.date).format(date) %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="tab-pane fade profile-edit pt-3"
+                    id="profile-edit"
+                  >
+                    <!-- Profile Edit Form -->
+                    <form method="post" action="/admin/profile">
+                      <div class="row mb-3">
+                        <label
+                          for="profileImage"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Profile Image</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <img
+                            src="/passport/<%= profile.image %>"
+                            alt="Profile"
+                          />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label
+                          for="fullName"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Full Name</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="fullName"
+                            type="text"
+                            class="form-control"
+                            id="fullName"
+                            value="<%= profile.fullName%>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Address"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Address</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="address"
+                            type="text"
+                            class="form-control"
+                            id="Address"
+                            value="<%= profile.address%>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Phone"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Phone</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="phoneNumber"
+                            type="text"
+                            class="form-control"
+                            id="Phone"
+                            value="<%= profile.phoneNumber%>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="Email"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Email</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="email"
+                            type="email"
+                            class="form-control"
+                            id="Email"
+                            value="<%= profile.email%>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                          Save Changes
+                        </button>
+                      </div>
+                    </form>
+                    <!-- End Profile Edit Form -->
+                  </div>
+
+                  <div class="tab-pane fade pt-3" id="profile-change-password">
+                    <!-- Change Password Form -->
+                    <form method="POST" action="/admin/change-password">
+                      <div class="row mb-3">
+                        <label
+                          for="currentPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Current Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="oldPassword"
+                            type="password"
+                            class="form-control"
+                            id="currentPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="newPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >New Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="newPassword"
+                            type="password"
+                            class="form-control"
+                            id="newPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label
+                          for="renewPassword"
+                          class="col-md-4 col-lg-3 col-form-label"
+                          >Re-enter New Password</label
+                        >
+                        <div class="col-md-8 col-lg-9">
+                          <input
+                            name="confirmPassword"
+                            type="password"
+                            class="form-control"
+                            id="renewPassword"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                          Change Password
+                        </button>
+                      </div>
+                    </form>
+                    <!-- End Change Password Form -->
+                  </div>
+                </div>
+                <!-- End Bordered Tabs -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+
+        Copyright <strong><span>Softrays Consultant</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://alexanderjoshua.com.ng/">Alexander Joshua</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/admin/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/admin/assets/vendor/php-email-form/validate.js"></script>
+    <script src="/admin/assets/vendor/quill/quill.min.js"></script>
+    <script src="/admin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/admin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/admin/assets/vendor/chart.js/chart.min.js"></script>
+    <script src="/admin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/admin/assets/vendor/echarts/echarts.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/admin/assets/js/main.js"></script>
+  </body>
+</html>
