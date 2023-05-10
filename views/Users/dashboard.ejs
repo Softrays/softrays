@@ -16,10 +16,7 @@
 
     <!-- Favicons -->
     <link href="/admin/assets/img/favicon.png" rel="icon" />
-    <link
-      href="/admin/assets/img/apple-touch-icon.png"
-      rel="apple-touch-icon"
-    />
+    <link href="/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -29,28 +26,13 @@
     />
 
     <!-- Vendor CSS Files -->
-    <link
-      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/admin/assets/vendor/remixicon/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+    <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
     <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
     <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
-    <link
-      href="/admin/assets/vendor/simple-datatables/style.css"
-      rel="stylesheet"
-    />
+    <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
     <link href="/admin/assets/css/style.css" rel="stylesheet" />
@@ -78,27 +60,12 @@
           <!-- End Search Icon-->
 
           <li class="nav-item dropdown pe-3">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="#"
-              data-bs-toggle="dropdown"
-            >
-              <img
-                src="/passport/<%= profile.image %>"
-                alt="Profile"
-                class="rounded-circle"
-              />
-              <span class="d-none d-md-block dropdown-toggle ps-2"
-                ><%= profile.fullName %></span
-              > </a
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+              <img src="/passport/<%= profile.image %>" alt="Profile" class="rounded-circle" />
+              <span class="d-none d-md-block dropdown-toggle ps-2"><%= profile.fullName %></span> </a
             ><!-- End Profile Iamge Icon -->
 
-            <ul
-              class="
-                dropdown-menu dropdown-menu-end dropdown-menu-arrow
-                profile
-              "
-            >
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
               <li class="dropdown-header">
                 <h6><%= profile.fullName %></h6>
                 <span><%= profile.email %></span>
@@ -108,10 +75,7 @@
               </li>
 
               <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="/users/profile"
-                >
+                <a class="dropdown-item d-flex align-items-center" href="/users/profile">
                   <i class="bi bi-person"></i>
                   <span>My Profile</span>
                 </a>
@@ -120,10 +84,7 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="/users/logout"
-                >
+                <a class="dropdown-item d-flex align-items-center" href="/users/logout">
                   <i class="bi bi-box-arrow-right"></i>
                   <span>Sign Out</span>
                 </a>
@@ -194,15 +155,7 @@
                     <h5 class="card-title">Course Registered</h5>
 
                     <div class="d-flex align-items-center">
-                      <div
-                        class="
-                          card-icon
-                          rounded-circle
-                          d-flex
-                          align-items-center
-                          justify-content-center
-                        "
-                      >
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i class="bi bi-stack"></i>
                       </div>
                       <div class="ps-3">
@@ -211,11 +164,8 @@
                     </div>
                   </div>
                   <hr />
-                  <small
-                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
-                  >
-                    <i class="bi bi-clock"></i> &nbsp; Registered on <%=
-                    moment(profile.date).format(date) %></small
+                  <small style="padding: 0 20px 10px; color: rgb(167, 167, 167)">
+                    <i class="bi bi-clock"></i> &nbsp; Registered on <%= moment(profile.date).format(date) %></small
                   >
                 </div>
               </div>
@@ -228,15 +178,7 @@
                     <h5 class="card-title">Duration of Course</h5>
 
                     <div class="d-flex align-items-center">
-                      <div
-                        class="
-                          card-icon
-                          rounded-circle
-                          d-flex
-                          align-items-center
-                          justify-content-center
-                        "
-                      >
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i class="bi bi-people"></i>
                       </div>
                       <div class="ps-3">
@@ -245,9 +187,7 @@
                     </div>
                   </div>
                   <hr />
-                  <small
-                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
-                  >
+                  <small style="padding: 0 20px 10px; color: rgb(167, 167, 167)">
                     <i class="bi bi-clock"></i> &nbsp; Just Updated</small
                   >
                 </div>
@@ -261,26 +201,14 @@
                     <h5 class="card-title">Payment Status</h5>
 
                     <div class="d-flex align-items-center">
-                      <div
-                        class="
-                          card-icon
-                          rounded-circle
-                          d-flex
-                          align-items-center
-                          justify-content-center
-                        "
-                      >
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                         <i class="bi bi-currency-dollar"></i>
                       </div>
-                      <% if(profile.reference.gateway_response == undefined) {
-                      %>
+                      <% if(profile.reference.gateway_response == undefined) { %>
                       <div class="ps-3">
                         <h6>
                           Not Paid &nbsp;
-                          <a
-                            href="/users/print-application-form"
-                            class="text-sm btn btn-danger"
-                          >
+                          <a href="/users/print-application-form" class="text-sm btn btn-danger">
                             <i class="bi bi-credit-card-2-back"></i> Pay Now</a
                           >
                         </h6>
@@ -295,17 +223,13 @@
                   <hr />
 
                   <% if(profile.reference.gateway_response == undefined) { %>
-                  <small
-                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
-                  >
+                  <small style="padding: 0 20px 10px; color: rgb(167, 167, 167)">
                     <i class="bi bi-clock"></i> &nbsp; Not Paid</small
                   >
                   <% }else { %>
-                  <small
-                    style="padding: 0 20px 10px; color: rgb(167, 167, 167)"
-                  >
-                    <i class="bi bi-clock"></i> &nbsp; Paid on: <%=
-                    moment(profile.reference.paid_at).format(date) %></small
+                  <small style="padding: 0 20px 10px; color: rgb(167, 167, 167)">
+                    <i class="bi bi-clock"></i> &nbsp; Paid on: <%= moment(profile.reference.paid_at).format(date)
+                    %></small
                   >
                   <% } %>
                 </div>
@@ -326,13 +250,8 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body text-center">
-                <h5 class="card-title">
-                  Join the Siwes Group Chat for more information
-                </h5>
-                <a
-                  href="https://chat.whatsapp.com/Kqv5d3RHZtmH5JKFaYeN87"
-                  class="btn btn-success btn-lg mr-5"
-                >
+                <h5 class="card-title">Join the Siwes Group Chat for more information</h5>
+                <a href="https://chat.whatsapp.com/La9nRaLMOISBidb7Ryf18h" class="btn btn-success btn-lg mr-5">
                   <i class="bi bi-whatsapp"> </i> &nbsp; Whatsapp
                 </a>
                 <!-- &nbsp;&nbsp;&nbsp;
@@ -347,8 +266,7 @@
           </div>
         </div>
       </section>
-      <% } %> <% if( profile.reference.gateway_response == res && profile.course
-      == siwes ) { %>
+      <% } %> <% if( profile.reference.gateway_response == res && profile.course == siwes ) { %>
       <div class="card">
         <div class="card-body">
           <p class="card-title">Please pay to join the Whatsapp Group</p>
@@ -361,9 +279,7 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">
-                  Students Also Studying <%= profile.course %>
-                </h5>
+                <h5 class="card-title">Students Also Studying <%= profile.course %></h5>
 
                 <!-- Table with stripped rows -->
                 <div class="table-responsive">
@@ -379,8 +295,7 @@
                         <th scope="col">Date Registered</th>
                       </tr>
                     </thead>
-                    <% students.forEach(otherStudent => { %> <%
-                    if(otherStudent.email == profile.email) { %> <%
+                    <% students.forEach(otherStudent => { %> <% if(otherStudent.email == profile.email) { %> <%
                     profile.email= ''; %> <% } %>
                     <tbody>
                       <tr>
@@ -389,23 +304,15 @@
                             src="/passport/<%= otherStudent.image %>"
                             class="img-responsive"
                             alt=""
-                            style="
-                              height: 40px;
-                              width: 40px;
-                              border-radius: 50%;
-                            "
+                            style="height: 40px; width: 40px; border-radius: 50%"
                           />
                         </td>
-                        <td style="text-transform: capitalize">
-                          <%= otherStudent.fullName %>
-                        </td>
+                        <td style="text-transform: capitalize"><%= otherStudent.fullName %></td>
 
                         <td><%= otherStudent.email %></td>
                         <td><%= otherStudent.gender %></td>
                         <td><%= otherStudent.phoneNumber %></td>
-                        <td style="text-transform: capitalize">
-                          <%= otherStudent.address %>
-                        </td>
+                        <td style="text-transform: capitalize"><%= otherStudent.address %></td>
                         <td><%= moment(otherStudent.date).format('LLLL') %></td>
                       </tr>
                     </tbody>
@@ -414,39 +321,26 @@
                 </div>
                 <div>
                   <% if (pages > 0) { %>
-                  <ul
-                    class="
-                      pagination
-                      text-center
-                      justify-content-end
-                      pagination-md
-                    "
-                  >
+                  <ul class="pagination text-center justify-content-end pagination-md">
                     <% if (current == 1) { %>
                     <li class="disabled page-item">
                       <a class="page-link">First Page</a>
                     </li>
                     <% } else { %>
                     <li class="page-item">
-                      <a href="/users/dashboard/1" class="page-link"
-                        >First Page</a
-                      >
+                      <a href="/users/dashboard/1" class="page-link">First Page</a>
                     </li>
-                    <% } %> <% var i = (Number(current) > 5 ? Number(current) -
-                    4 : 1) %> <% if (i !== 1) { %>
+                    <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <% if (i !== 1) { %>
                     <li class="disabled page-item">
                       <a class="page-link">...</a>
                     </li>
-                    <% } %> <% for (; i <= (Number(current) + 4) && i <= pages;
-                    i++) { %> <% if (i == current) { %>
+                    <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <% if (i == current) { %>
                     <li class="active page-item">
                       <a class="page-link"><%= i %></a>
                     </li>
                     <% } else { %>
                     <li class="page-item">
-                      <a href="/users/dashboard/<%= i %>" class="page-link"
-                        ><%= i %></a
-                      >
+                      <a href="/users/dashboard/<%= i %>" class="page-link"><%= i %></a>
                     </li>
                     <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
                     <li class="disabled page-item">
@@ -458,9 +352,7 @@
                     </li>
                     <% } else { %>
                     <li class="page-item">
-                      <a href="/users/dashboard/<%= pages %>" class="page-link"
-                        >Last Page</a
-                      >
+                      <a href="/users/dashboard/<%= pages %>" class="page-link">Last Page</a>
                     </li>
                     <% } %>
                   </ul>
@@ -493,9 +385,7 @@
     </footer>
     <!-- End Footer -->
 
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 

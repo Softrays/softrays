@@ -77,7 +77,7 @@ app.get("*", (req, res) => {
   res.render("Admin/404");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5100;
 app.listen(PORT, () => {
   console.log(`Server started at port ${PORT}`);
 });

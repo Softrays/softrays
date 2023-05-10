@@ -173,6 +173,10 @@ function changePrice() {
       document.getElementById("price").value = 60000;
       document.getElementById("duration").value = "12 Weeks";
       break;
+    case "siwes":
+      document.getElementById("price").value = 10000;
+      document.getElementById("duration").value = "12 Weeks";
+      break;
     default:
       console.log(course);
       break;
