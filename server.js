@@ -79,5 +79,5 @@ app.get("*", (req, res) => {
 
 const PORT = process.env.PORT || 5100;
 app.listen(PORT, () => {
-  console.log(`Server started at port ${PORT}`);
+  console.log(`Server started at port ${PORT}.`);
 });
