@@ -74,112 +74,112 @@ function changePrice() {
   course = document.querySelector("#courses").value;
   console.log(course);
   switch (course) {
-    case "nil":
-      document.getElementById("price").value = 0;
+    case 'nil':
+      document.getElementById('price').value = 0;
       break;
-    case "Advance Certification in Microsoft Excel":
-      document.getElementById("price").value = 50000;
-      document.getElementById("duration").value = "2 Weeks";
+    case 'Advance Certification in Microsoft Excel':
+      document.getElementById('price').value = 50000;
+      document.getElementById('duration').value = '2 Weeks';
       break;
-    case "Advance Certification in Solid Works":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Advance Certification in Solid Works':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "Advance Certification in AutoCAD (2D&3D)":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Advance Certification in AutoCAD (2D&3D)':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Advance Certification in Revit (2D&3D)":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Advance Certification in Revit (2D&3D)':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Advance Certification in Python (Data Science)":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Advance Certification in Python (Data Science)':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Advance Certification in Java Programming":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Advance Certification in Java Programming':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Advance Certification in Cyber Security":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "12 Weeks";
+    case 'Advance Certification in Cyber Security':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '12 Weeks';
       break;
-    case "Advance Certification in Digital Marketing":
-      document.getElementById("price").value = 200000;
-      document.getElementById("duration").value = "12 Weeks";
+    case 'Advance Certification in Digital Marketing':
+      document.getElementById('price').value = 200000;
+      document.getElementById('duration').value = '12 Weeks';
       break;
-    case "Certification in Information Technology and Computing":
-      document.getElementById("price").value = 80000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Certification in Information Technology and Computing':
+      document.getElementById('price').value = 80000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "Professional Certification in Adobe Photoshop":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Professional Certification in Adobe Photoshop':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Computer Systems Engineering A+ and Networking N+ (CSE)":
-      document.getElementById("price").value = 80000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Computer Systems Engineering A+ and Networking N+ (CSE)':
+      document.getElementById('price').value = 80000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Certification in CorelDRAW and Digital Printing":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Certification in CorelDRAW and Digital Printing':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Certificate in Python Programming":
-      document.getElementById("price").value = 60000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Certificate in Python Programming':
+      document.getElementById('price').value = 60000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "Certificate in Digital Marketing":
-      document.getElementById("price").value = 100000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Certificate in Digital Marketing':
+      document.getElementById('price').value = 100000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "Certificate in Motion Graphics":
-      document.getElementById("price").value = 100000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Certificate in Motion Graphics':
+      document.getElementById('price').value = 100000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "CCNA (CISCO CERTIFICATION)":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'CCNA (CISCO CERTIFICATION)':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "CCNP (CISCO CERTIFICATION)":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'CCNP (CISCO CERTIFICATION)':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Data Analytics":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Data Analysis':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "Internship":
-      document.getElementById("price").value = 50000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Internship':
+      document.getElementById('price').value = 50000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Mini Importation Training":
-      document.getElementById("price").value = 50000;
-      document.getElementById("duration").value = "4 Weeks";
+    case 'Mini Importation Training':
+      document.getElementById('price').value = 50000;
+      document.getElementById('duration').value = '4 Weeks';
       break;
-    case "Mobile App Development (Hybrid)":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "12 Weeks";
+    case 'Mobile App Development (Hybrid)':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '12 Weeks';
       break;
-    case "Sage Accounting":
-      document.getElementById("price").value = 80000;
-      document.getElementById("duration").value = "6 Weeks";
+    case 'Sage Accounting':
+      document.getElementById('price').value = 80000;
+      document.getElementById('duration').value = '6 Weeks';
       break;
-    case "User Interface/User Experience (UI/UX) Desgin":
-      document.getElementById("price").value = 100000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'User Interface/User Experience (UI/UX) Desgin':
+      document.getElementById('price').value = 100000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Web Development (Front End)":
-      document.getElementById("price").value = 150000;
-      document.getElementById("duration").value = "8 Weeks";
+    case 'Web Development (Front End)':
+      document.getElementById('price').value = 150000;
+      document.getElementById('duration').value = '8 Weeks';
       break;
-    case "Web Development (Full Stack)":
-      document.getElementById("price").value = 300000;
-      document.getElementById("duration").value = "10 Weeks";
+    case 'Web Development (Full Stack)':
+      document.getElementById('price').value = 300000;
+      document.getElementById('duration').value = '10 Weeks';
       break;
-    case "siwes/IT":
-      document.getElementById("price").value = 10000;
-      document.getElementById("duration").value = "6 Months";
+    case 'siwes/IT':
+      document.getElementById('price').value = 10000;
+      document.getElementById('duration').value = '6 Months';
       break;
     default:
       console.log(course);
