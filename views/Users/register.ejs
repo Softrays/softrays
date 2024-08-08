@@ -14,7 +14,10 @@
 
     <!-- Favicons -->
     <link href="/admin/assets/img/favicon.png" rel="icon" />
-    <link href="/admin/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link
+      href="/admin/assets/img/apple-touch-icon.png"
+      rel="apple-touch-icon"
+    />
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -24,13 +27,28 @@
     />
 
     <!-- Vendor CSS Files -->
-    <link href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="/admin/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="/admin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/admin/assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link href="/admin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
     <link href="/admin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
-    <link href="/admin/assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+    <link
+      href="/admin/assets/vendor/simple-datatables/style.css"
+      rel="stylesheet"
+    />
 
     <!-- Main CSS File -->
     <link href="/admin/assets/css/style.css" rel="stylesheet" />
@@ -39,16 +57,39 @@
       .display {
         display: none;
       }
+
+      #mobile {
+        width: 128%;
+      }
+
+      @media (max-width: 768px) {
+        #mobile {
+          width: 100%;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background: rgb(59 130 246);
+      }
     </style>
   </head>
 
   <body>
     <main>
       <div class="container">
-        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <section
+          class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4"
+        >
           <div class="container">
             <div class="row justify-content-center">
-              <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+              <div
+                class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center"
+              >
                 <div class="d-flex justify-content-center py-4">
                   <a href="/" class="logo d-flex align-items-center w-auto">
                     <img src="../assets/img/logo.png" alt="logo" />
@@ -56,20 +97,31 @@
                 </div>
                 <!-- End Logo -->
 
-                <div class="card mb-3" style="width: 125%">
+                <div class="card mb-3" id="mobile">
                   <div class="card-body">
                     <div class="pt-4 pb-2">
-                      <h5 class="card-title text-center pb-0 fs-4">Application Form</h5>
-                      <p class="text-center small">Enter your personal details to create one</p>
+                      <h5 class="card-title text-center pb-0 fs-4">
+                        Application Form
+                      </h5>
+                      <p class="text-center small">
+                        Enter your personal details to create one
+                      </p>
                     </div>
 
-                    <form class="row g-3 needs-validation" action="/users/register" method="POST" novalidate>
+                    <form
+                      class="row g-3 needs-validation"
+                      action="/users/register"
+                      method="POST"
+                      novalidate
+                    >
                       <%- include('../partials/messages') %>
 
                       <div id="first">
                         <h4 class="">Personal Information</h4>
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Full Name</label>
+                          <label for="yourUsername" class="form-label"
+                            >Full Name</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="text"
@@ -78,12 +130,16 @@
                               id="yourUsername"
                               value="<%= typeof fullName != 'undefined' ? fullName : '' %>"
                             />
-                            <div class="invalid-feedback">Please enter your name.</div>
+                            <div class="invalid-feedback">
+                              Please enter your name.
+                            </div>
                           </div>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Email</label>
+                          <label for="yourUsername" class="form-label"
+                            >Email</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="email"
@@ -92,12 +148,16 @@
                               id="yourUsername"
                               value="<%= typeof email != 'undefined' ? email : '' %>"
                             />
-                            <div class="invalid-feedback">Please enter your email.</div>
+                            <div class="invalid-feedback">
+                              Please enter your email.
+                            </div>
                           </div>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Phone Number</label>
+                          <label for="yourUsername" class="form-label"
+                            >Phone Number</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="text"
@@ -109,7 +169,9 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Address</label>
+                          <label for="yourUsername" class="form-label"
+                            >Address</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="text"
@@ -122,7 +184,9 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Gender</label>
+                          <label for="yourUsername" class="form-label"
+                            >Gender</label
+                          >
                           <div class="input-group has-validation">
                             <select name="gender" class="form-control">
                               <option value="">Select</option>
@@ -133,14 +197,22 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <a id="switch" class="btn btn-primary" style="width: 100%"> Next </a>
+                          <a
+                            id="switch"
+                            class="btn btn-primary"
+                            style="width: 100%"
+                          >
+                            Next
+                          </a>
                         </div>
                       </div>
                       <!-- Second Infomation on Form -->
                       <div id="second" class="display">
                         <h4>Other Information</h4>
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Nationality</label>
+                          <label for="yourUsername" class="form-label"
+                            >Nationality</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="text"
@@ -153,7 +225,9 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">State</label>
+                          <label for="yourUsername" class="form-label"
+                            >State</label
+                          >
                           <div class="input-group has-validation">
                             <input
                               type="text"
@@ -166,7 +240,9 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Qualification</label>
+                          <label for="yourUsername" class="form-label"
+                            >Qualification</label
+                          >
                           <div class="input-group has-validation">
                             <select name="qualification" class="form-control">
                               <option>Select</option>
@@ -181,7 +257,9 @@
 
                         <!--  -->
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Course</label>
+                          <label for="yourUsername" class="form-label"
+                            >Course</label
+                          >
                           <div class="input-group has-validation">
                             <select
                               name="course"
@@ -191,66 +269,127 @@
                               value="<%= typeof course != 'undefined' ? course : '' %>"
                             >
                               <option class="course" value="nil">Select</option>
-                              <option class="course" value="Advance Certification in Microsoft Excel">
+                              <option
+                                class="course"
+                                value="Advance Certification in Microsoft Excel"
+                              >
                                 Advance Certification in Microsoft Excel
                               </option>
-                              <option class="course" value="Advance Certification in Solid Works">
+                              <option
+                                class="course"
+                                value="Advance Certification in Solid Works"
+                              >
                                 Advance Certification in Solid Works
                               </option>
-                              <option value="Advance Certification in AutoCAD (2D&3D)">
+                              <option
+                                value="Advance Certification in AutoCAD (2D&3D)"
+                              >
                                 Advance Certification in AutoCAD (2D&3D)
                               </option>
-                              <option value="Advance Certification in Revit (2D&3D)">
+                              <option
+                                value="Advance Certification in Revit (2D&3D)"
+                              >
                                 Advance Certification in Revit (2D&3D)
                               </option>
-                              <option value="Advance Certification in Python (Data Science)">
+                              <option
+                                value="Advance Certification in Python (Data Science)"
+                              >
                                 Advance Certification in Python (Data Science)
                               </option>
-                              <option value="Advance Certification in Java Programming">
+                              <option
+                                value="Advance Certification in Java Programming"
+                              >
                                 Advance Certification in Java Programming
                               </option>
-                              <option value="Advance Certification in Cyber Security">
+                              <option
+                                value="Advance Certification in Cyber Security"
+                              >
                                 Advance Certification in Cyber Security
                               </option>
-                              <option value="Advance Certification in Digital Marketing">
+                              <option
+                                value="Advance Certification in Digital Marketing"
+                              >
                                 Advance Certification in Digital Marketing
                               </option>
-                              <option value="Certification in Information Technology and Computing">
-                                Certification in Information Technology and Computing
+                              <option
+                                value="Certification in Information Technology and Computing"
+                              >
+                                Certification in Information Technology and
+                                Computing
                               </option>
-                              <option value="Certification in Adobe Photoshop">Certification in Adobe Photoshop</option>
-                              <option value="Computer Systems Engineering A+ and Networking N+ (CSE)">
-                                Computer Systems Engineering A+ and Networking N+ (CSE) &nbsp; &nbsp;
+                              <option value="Certification in Adobe Photoshop">
+                                Certification in Adobe Photoshop
                               </option>
-                              <option value="Certification in CorelDRAW and Digital Printing">
+                              <option
+                                value="Computer Systems Engineering A+ and Networking N+ (CSE)"
+                              >
+                                Computer Systems Engineering A+ and Networking
+                                N+ (CSE) &nbsp; &nbsp;
+                              </option>
+                              <option
+                                value="Certification in CorelDRAW and Digital Printing"
+                              >
                                 Certification in CorelDRAW and Digital Printing
                               </option>
                               <option value="Certificate in Python Programming">
                                 Certificate in Python Programming
                               </option>
-                              <option value="Certificate in Digital Marketing">Certificate in Digital Marketing</option>
-                              <option value="Certificate in Motion Graphics">Certificate in Motion Graphics</option>
-                              <option value="CCNA (CISCO CERTIFICATION)">CCNA (CISCO CERTIFICATION)</option>
-                              <option value="CCNP (CISCO CERTIFICATION)">CCNP (CISCO CERTIFICATION)</option>
-                              <option value="Data Analysis Using SPSS">Data Analysis Using SPSS</option>
+                              <option value="Certificate in Digital Marketing">
+                                Certificate in Digital Marketing
+                              </option>
+                              <option value="Certificate in Motion Graphics">
+                                Certificate in Motion Graphics
+                              </option>
+                              <option value="CCNA (CISCO CERTIFICATION)">
+                                CCNA (CISCO CERTIFICATION)
+                              </option>
+                              <option value="CCNP (CISCO CERTIFICATION)">
+                                CCNP (CISCO CERTIFICATION)
+                              </option>
+                              <option value="Data Analysis Using SPSS">
+                                Data Analysis Using SPSS
+                              </option>
                               <option value="Internship">Internship</option>
-                              <option value="Mini Importation Training">Mini Importation Training</option>
-                              <option value="Mobile App Development">Mobile App Development</option>
-                              <option value="Sage Accounting">Sage Accounting</option>
-                              <option value="User Interface/User Experience (UI/UX) Desgin">
+                              <option value="Mini Importation Training">
+                                Mini Importation Training
+                              </option>
+                              <option value="Mobile App Development">
+                                Mobile App Development
+                              </option>
+                              <option value="Sage Accounting">
+                                Sage Accounting
+                              </option>
+                              <option
+                                value="User Interface/User Experience (UI/UX) Desgin"
+                              >
                                 User Interface/User Experience (UI/UX) Desgin
                               </option>
-                              <option value="Web Development (Front End)">Web Design (Front End)</option>
-                              <option value="Web Development (Full Stack)">Web Development (Full Stack)</option>
-                              <option value="siwes">Student Industrial Work Experience Scheme</option>
+                              <option value="Web Development (Front End)">
+                                Web Design (Front End)
+                              </option>
+                              <option value="Web Development (Full Stack)">
+                                Web Development (Full Stack)
+                              </option>
+                              <option value="siwes">
+                                Student Industrial Work Experience Scheme
+                              </option>
                             </select>
                           </div>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <label for="yourUsername" class="form-label">Price</label>
+                          <label for="yourUsername" class="form-label"
+                            >Price</label
+                          >
                           <div class="input-group has-validation">
-                            <input type="text" name="price" class="form-control" id="price" value="0" readonly />
+                            <input
+                              type="text"
+                              name="price"
+                              class="form-control"
+                              id="price"
+                              value="0"
+                              readonly
+                            />
                           </div>
                         </div>
 
@@ -268,11 +407,18 @@
                         </div>
 
                         <div class="col-12 pb-3">
-                          <a id="back-switch" class="btn btn-outline-secondary w-100"> Back </a>
+                          <a
+                            id="back-switch"
+                            class="btn btn-outline-secondary w-100"
+                          >
+                            Back
+                          </a>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <a id="switch2" class="btn btn-primary w-100"> Next </a>
+                          <a id="switch2" class="btn btn-primary w-100">
+                            Next
+                          </a>
                         </div>
                       </div>
 
@@ -289,10 +435,15 @@
                               value="<%= typeof password != 'undefined' ? password : '' %>"
                             />
 
-                            <div class="invalid-feedback">Please enter your password!</div>
+                            <div class="invalid-feedback">
+                              Please enter your password!
+                            </div>
                           </div>
                           <div>
-                            <small class="text-secondary"> Password should be at least 8 characters long.</small>
+                            <small class="text-secondary">
+                              Password should be at least 8 characters
+                              long.</small
+                            >
                           </div>
                         </div>
 
@@ -306,16 +457,30 @@
                               class="form-control"
                               value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
                             />
-                            <div class="invalid-feedback">Please re-enter your password!</div>
+                            <div class="invalid-feedback">
+                              Please re-enter your password!
+                            </div>
                           </div>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <a id="back-switch2" class="btn btn-outline-secondary w-100"> Back </a>
+                          <a
+                            id="back-switch2"
+                            class="btn btn-outline-secondary w-100"
+                          >
+                            Back
+                          </a>
                         </div>
 
                         <div class="col-12 pb-3">
-                          <button class="btn btn-primary w-100" type="submit" id="switch2" name="submit">Login</button>
+                          <button
+                            class="btn btn-primary w-100"
+                            type="submit"
+                            id="switch2"
+                            name="submit"
+                          >
+                            Login
+                          </button>
                         </div>
                       </div>
                     </form>
@@ -342,7 +507,9 @@
     </main>
     <!-- End #main -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
       ><i class="bi bi-arrow-up-short"></i
     ></a>
 

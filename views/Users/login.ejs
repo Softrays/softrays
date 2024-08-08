@@ -48,6 +48,26 @@
 
     <!-- Main CSS File -->
     <link href="/admin/assets/css/style.css" rel="stylesheet" />
+      <style>
+            #mobile {
+        width: 115%;
+      }
+
+@media (max-width: 768px) {
+  #mobile {
+        width: 100%;
+      }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgb(59 130 246);
+}
+    </style>
   </head>
 
   <body>
@@ -83,7 +103,7 @@
                 </div>
                 <!-- End Logo -->
 
-                <div class="card mb-3" style="width: 115%">
+                <div class="card mb-3" id="mobile">
                   <div class="card-body">
                     <div class="pt-4 pb-2">
                       <h5 class="card-title text-center pb-0 fs-4">
